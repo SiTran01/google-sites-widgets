@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: transparent;
+}
+
+.circle {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+  background: transparent;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  transform-origin: center;
+  animation: rotateText 25s linear infinite;
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
