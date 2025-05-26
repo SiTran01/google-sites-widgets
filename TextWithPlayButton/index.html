@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yến sào Tám Thủy</title>
+  <link rel="stylesheet" href="text-playbutton.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Faustina&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-container">
+    <h1 class="fade-in-right">Yến sào Tám Thủy</h1>
+
+    <p class="fade-in">
+      Thương hiệu Yến sào cung đình hảo hạng, mang âm hưởng Trung Hoa cổ đại. An An Bird's Nest chuyên cung cấp các loại sản phẩm tổ yến, yến chưng cao cấp.
+    </p>
+
+    <div class="wrapper fade-in" id="pip-button">
+      <div class="circle"></div>
+      <div class="circle-inner"></div>
+      <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <polygon points="40,30 65,50 40,70" fill="#ffffff" />
+      </svg>
+      <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <rect x="30" y="20" width="15" height="60" fill="#ffffff"></rect>
+        <rect x="55" y="20" width="15" height="60" fill="#ffffff"></rect>
+      </svg>
+    </div>
+
+    <video id="video-player" style="display: none;" playsinline>
+      <source src="https://cdn.shopify.com/videos/c/o/v/ed71ef0bdf744603a54bcc9dcdbee72e.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <script src="text-playbutton.js"></script>
+</body>
+</html>
