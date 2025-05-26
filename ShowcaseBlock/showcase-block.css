@@ -1,0 +1,209 @@
+/* Font family base */
+.centered-rectangle {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.outer-container {
+  width: 1008px;
+  height: 580px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  background: url('https://64.media.tumblr.com/a763e482f1b3a2b62750202499c9082b/61ed37a12c251b84-c4/s640x960/962c00eaa80860ede1bddea89936d9cc6798e72d.gifv') center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.image-container h1,
+.image-container p,
+.image-container button {
+  position: relative;
+  z-index: 2;
+}
+
+.image-container h1 {
+  font-size: 64px;
+  line-height: 80px;
+  text-align: left;
+  color: #fff;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9),
+               -5px -5px 10px rgba(0, 0, 0, 0.9);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s, transform 1s;
+}
+
+.image-container p {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 32px;
+  font-weight: 500;
+  color: #ffffff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9),
+               -3px -3px 6px rgba(0, 0, 0, 0.9);
+  margin: 10px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.3s, transform 1.3s;
+}
+
+.image-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 160px;
+  height: 52px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #404040;
+  position: absolute;
+  bottom: 80px;
+  left: 90px;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1.5s ease, transform 1.5s ease, box-shadow 1s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.image-container button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-container button::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, #f399bd, #399df3);
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.image-container button:hover::before {
+  left: 0;
+}
+.image-container button:not(:hover)::before {
+  left: -100%;
+  transition: left 0.6s ease;
+}
+
+.image-container button span,
+.image-container button svg {
+  position: relative;
+  z-index: 2;
+}
+
+.image-container button svg {
+  width: 21px;
+  height: 21px;
+  stroke: currentColor;
+  transition: transform 0.7s ease;
+}
+
+.image-container button:hover svg {
+  transform: translateX(5px);
+}
+
+/* --- Responsive Styles --- */
+
+/* Desktop */
+@media only screen and (min-width: 992px) {
+  .image-container {
+    padding: 80px 90px 50px 90px;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 668px) and (max-width: 991px) {
+  .outer-container { height: 400px; }
+  .image-container {
+    padding: 60px 40px 30px 60px;
+  }
+  .image-container h1 {
+    font-size: 52px;
+    line-height: 65px;
+  }
+  .image-container p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .image-container button {
+    font-size: 16px;
+    width: 160px;
+    height: 40px;
+    bottom: 60px;
+    left: 60px;
+  }
+}
+
+/* Small Phone */
+@media only screen and (max-width: 667px) {
+  .outer-container {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .image-container {
+    padding: 20px;
+  }
+
+  .image-container h1 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .image-container p {
+    display: none;
+  }
+
+  .image-container button {
+    font-size: 14px;
+    width: 60%;
+    height: 28px;
+    bottom: 14px;
+    left: 20%;
+  }
+
+  .image-container button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
