@@ -1,0 +1,67 @@
+body {
+  background-color: #fff5e8;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.feature-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0px 0px;
+  background-color: #fff5e8; /* Nền ngoài */
+}
+
+.feature-box {
+  flex: 1 1 calc(25% - 20px); /* 4 box 1 hàng */
+  max-width: 250px;
+  background-color: #fff; /* Nền trong */
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+  width: 50px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.feature-icon img {
+  max-width: 100%;
+  height: auto;
+}
+
+.feature-text {
+  font-size: 0.95rem;
+  color: #4f4f4f;
+}
+
+.feature-text strong {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 6px;
+  color: #613613;
+}
+
+@media (max-width: 1024px) {
+  .feature-box {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-box {
+    display: none;
+  }
+}
